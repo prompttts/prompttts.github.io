@@ -27,18 +27,40 @@
 				<br>
 
 <h2 id="abstract">Abstract</h2>
-<p> Great success has been achieved in the generation of text or images from text descriptions in recent research. In this work, we try to explore the possibility of utilizing text descriptions to guide the text-to-speech (TTS). To this end, we propose PromptTTS that takes a prompt consisting of a style prompt, a colon and a content prompt as input to synthesize speech in the corresponding style and content. Specifically, PromptTTS has three main modules: (1) a style encoder to extract style representation from the style prompt to guide speech synthesis; (2) a content encoder to learn content representation from the content prompt; (3) a speech decoder to synthesize speech according to the style representation and the content representation from both the encoders. Compared with previous works in controllable TTS that require users to have acoustic knowledge to understand style factors such as prosody and pitch, PromptTTS is more user-friendly since text descriptions are the most natural way to express intention. Given that there is no prompt dataset available, we construct and release a dataset containing prompts and audios in the corresponding style and content. Experiments show that PromptTTS can generate speech with precise style control and high speech quality. Audio samples and our dataset are publicly available.</p>
+<p> Using a text description as prompt to guide the generation of text or images (e.g., GPT-3 or DALLE-2) has drawn wide attention recently. Beyond text and image generation, in this work, we explore the possibility of utilizing text descriptions to guide speech synthesis. Thus, we develop a text-to-speech (TTS) system (dubbed as PromptTTS) that takes a prompt with both style and content descriptions as input to synthesize the corresponding speech. Specifically, PromptTTS consists of a style encoder and a content encoder to extract the corresponding representations from the prompt, and a speech decoder to synthesize speech according to the extracted style and content representations. Compared with previous works in controllable TTS that require users to have acoustic knowledge to understand style factors such as prosody and pitch, PromptTTS is more user-friendly since text descriptions are the most natural way to express speech style (e.g., ``A lady whispers to her friend slowly''). Given that there is no TTS dataset with prompts, we construct and release a dataset containing prompts with style and content information and the corresponding speech. Experiments show that PromptTTS can generate speech with precise style control and high speech quality. Audio samples and our dataset are publicly available.</p>
 
 <h2 id="dataset">Dataset</h2>
-<p> We verify the effectiveness of PromptTTS on two speech datasets: a synthesized dataset EMO and a public dataset LibriTTS. EMO is a new speech corpus crawled from a commercial TTS <a href="https://azure.microsoft.com/en-us/services/cognitive-services/text-to-speech/#overview">API</a>, which can generate speech with different genders and emotions. We use five style factors in experiments to control the style of output speech including gender, pitch, speaking speed, volume and emotion. Note that EMO has five different emotions and LibriTTS has no emotion variant available. For the style factors other than gender and emotion, we sort audio clips according to the value of style factors and divide them into three categories (high/normal/low) according to the proportion.</p>
-<p> Considering that there is no prompt in our datasets, we ask experts to write style prompts for our task and utilize SimBERT to expand them by generating more style prompts with similar semantics meaning. Every style prompt in the dataset corresponds to five style factors. After that, we combine the style prompts and the content prompts from the text transcripts in LibriTTS into prompts. When training our model, each audio together with the corresponding prompt describing the same style and content is utilized as paired data. Finally, we split our datasets into training sets and test sets, which are released in public.</p>
-<p> EMO: <a href="https://msramldl.blob.core.windows.net/modelrelease/PromptTTS/EMO.zip">Audio</a> <a href="https://msramldl.blob.core.windows.net/modelrelease/PromptTTS/prompt(EMO)_training.csv">Prompt(Training)</a>  <a href="https://msramldl.blob.core.windows.net/modelrelease/PromptTTS/prompt(EMO)_test.csv">Prompt(Test)</a> </p>
-<p> LibriTTS: <a href="http://www.openslr.org/60/">Audio</a> <a href="https://msramldl.blob.core.windows.net/modelrelease/PromptTTS/prompt(LibriTTS)_training.csv">Prompt(Training)</a>  <a href="https://msramldl.blob.core.windows.net/modelrelease/PromptTTS/prompt(LibriTTS)_test.csv">Prompt(Test)</a> </p>
+<p> Given that there is no TTS datasets with prompts, we construct and release a dataset called PromptSpeech which consists of speech and the corresponding prompts. We synthesize speech with 5 different style factors (gender, pitch, speaking speed, volume, and emotion) from a commercial TTS <a href="https://azure.microsoft.com/en-us/services/cognitive-services/text-to-speech/#overview">API</a>. The emotion factor has 5 categories\footnote{General, shout, whisper, cheerful, and sad.} and the gender factor has 2 categories. For the rest of style factors, we sort speech according to the value of style factors and divide them into 3 categories (high/normal/low) according to the proportion. Considering that the style of speech can be described in nature language, we ask experts to write style prompts for each category of style factors. To further augment the style prompts, we utilize SimBERT \cite{SimBERT} to generate more style prompts with similar semantics. The speech and the corresponding prompt describing the same style and content are used as paired data for our task.</p>
+<p> Since there could be a gap between the synthesized speech and the real speech, besides the dataset mentioned above (denoted as synthesized version), we also construct a dataset (denoted as real version) with real speech data from LibriTTS by similar construction process. Due to the lack of emotion in LibriTTS, the real version of PromptSpeech only have 4 style factors.</p>
+
+<h3 id="promptspeech">PromptSpeech</h3>
+<p> You can download the both versions of PromptSpeech from the table below and the number in the table corresponds to the amount of downloaded data.</p>
+<table><thead>
+<tr>
+<th style="text-align: center">Version</th>
+<th style="text-align: center">Training Prompt</th>
+<th style="text-align: center">Test Prompt</th>
+<th style="text-align: center">Speech</th>
+</tr></thead><tbody>
+<tr>
+<td>Synthesized</td>
+<td><a href="../dataset/promptspeech/Synthesized_training.zip">155092</a></td>
+<td><a href="../dataset/promptspeech/Synthesized_test.zip">5032</a></td>
+<td><a href="https://msramldl.blob.core.windows.net/modelrelease/PromptTTS/EMO.zip">160124</a></td>
+</tr>
+<tr>
+<td>Real</td>
+<td><a href="../dataset/promptspeech/Real_training.zip">26588</a></td>
+<td><a href="../dataset/promptspeech/Real_test.zip">1305</a></td>
+<td><a href="http://www.openslr.org/60/">27893</a></td>
+</tr>
+</tbody>
+</table>
 
 <h2 id="audio samples">Audio Samples</h2>
-<p> The following part is 8 audio samples on EMO or LibriTTS, each of which consists of 4 audios from PromptTTS and the two-stage baseline system(Two-stage).</p>
+<p> The following part is the audio samples on PromptSpeech from PromptTTS and the two-stage baseline system.</p>
 
-<h3 id="synthesized">Synthesized</h3>
+<h3 id="synthesized version">Synthesized Version</h3>
 
 <h4 id="gender_e">Gender</h4>
 <p><em>Ask a boy to speak with normal speed and volume: Tom, the Piper's Son.</em></p>
@@ -245,7 +267,7 @@
 </tbody>
 </table>
 
-<h3 id="real">Real</h3>
+<h3 id="real version">Real Version</h3>
 
 <h4 id="gender_p">Gender</h4>
 <p><em>Generate a male voice, please: He never did any work except to play the pipes, and he played so badly that few pennies ever found their way into his pouch.</em></p>
