@@ -27,10 +27,10 @@
 				<br>
 
 <h2 id="abstract">Abstract</h2>
-<p> Using a text description as prompt to guide the generation of text or images (e.g., GPT-3 or DALLE-2) has drawn wide attention recently. Beyond text and image generation, in this work, we explore the possibility of utilizing text descriptions to guide speech synthesis. Thus, we develop a text-to-speech (TTS) system (dubbed as PromptTTS) that takes a prompt with both style and content descriptions as input to synthesize the corresponding speech. Specifically, PromptTTS consists of a style encoder and a content encoder to extract the corresponding representations from the prompt, and a speech decoder to synthesize speech according to the extracted style and content representations. Compared with previous works in controllable TTS that require users to have acoustic knowledge to understand style factors such as prosody and pitch, PromptTTS is more user-friendly since text descriptions are the most natural way to express speech style (e.g., ``A lady whispers to her friend slowly''). Given that there is no TTS dataset with prompts, we construct and release a dataset containing prompts with style and content information and the corresponding speech. Experiments show that PromptTTS can generate speech with precise style control and high speech quality. Audio samples and our dataset are publicly available.</p>
+<p> Using a text description as prompt to guide the generation of text or images (e.g., GPT-3 or DALLE-2) has drawn wide attention recently. Beyond text and image generation, in this work, we explore the possibility of utilizing text descriptions to guide speech synthesis. Thus, we develop a text-to-speech (TTS) system (dubbed as PromptTTS) that takes a prompt with both style and content descriptions as input to synthesize the corresponding speech. Specifically, PromptTTS consists of a style encoder and a content encoder to extract the corresponding representations from the prompt, and a speech decoder to synthesize speech according to the extracted style and content representations. Compared with previous works in controllable TTS that require users to have acoustic knowledge to understand style factors such as prosody and pitch, PromptTTS is more user-friendly since text descriptions are the most natural way to express speech style (e.g., ''A lady whispers to her friend slowly''). Given that there is no TTS dataset with prompts, we construct and release a dataset containing prompts with style and content information and the corresponding speech. Experiments show that PromptTTS can generate speech with precise style control and high speech quality. Audio samples and our dataset are publicly available.</p>
 
 <h2 id="dataset">Dataset</h2>
-<p> Given that there is no TTS datasets with prompts, we construct and release a dataset called PromptSpeech which consists of speech and the corresponding prompts. We synthesize speech with 5 different style factors (gender, pitch, speaking speed, volume, and emotion) from a commercial TTS <a href="https://azure.microsoft.com/en-us/services/cognitive-services/text-to-speech/#overview">API</a>. The emotion factor has 5 categories\footnote{General, shout, whisper, cheerful, and sad.} and the gender factor has 2 categories. For the rest of style factors, we sort speech according to the value of style factors and divide them into 3 categories (high/normal/low) according to the proportion. Considering that the style of speech can be described in nature language, we ask experts to write style prompts for each category of style factors. To further augment the style prompts, we utilize SimBERT \cite{SimBERT} to generate more style prompts with similar semantics. The speech and the corresponding prompt describing the same style and content are used as paired data for our task.</p>
+<p> Given that there is no TTS datasets with prompts, we construct and release a dataset called PromptSpeech which consists of speech and the corresponding prompts. We synthesize speech with 5 different style factors (gender, pitch, speaking speed, volume, and emotion) from a commercial TTS <a href="https://azure.microsoft.com/en-us/services/cognitive-services/text-to-speech/#overview">API</a>. The emotion factor has 5 categories and the gender factor has 2 categories. For the rest of style factors, we sort speech according to the value of style factors and divide them into 3 categories (high/normal/low) according to the proportion. Considering that the style of speech can be described in nature language, we ask experts to write style prompts for each category of style factors. To further augment the style prompts, we utilize SimBERT to generate more style prompts with similar semantics. The speech and the corresponding prompt describing the same style and content are used as paired data for our task.</p>
 <p> Since there could be a gap between the synthesized speech and the real speech, besides the dataset mentioned above (denoted as synthesized version), we also construct a dataset (denoted as real version) with real speech data from LibriTTS by similar construction process. Due to the lack of emotion in LibriTTS, the real version of PromptSpeech only have 4 style factors.</p>
 
 <h3 id="promptspeech">PromptSpeech</h3>
@@ -63,7 +63,7 @@
 <h3 id="synthesized version">Synthesized Version</h3>
 
 <h4 id="gender_e">Gender</h4>
-<p><em>Ask a boy to speak with normal speed and volume: Tom, the Piper's Son.</em></p>
+<p><em>Ask a <b>boy</b> to speak with normal speed and volume: Tom, the Piper's Son.</em></p>
 <table>
 <thead>
 <tr>
@@ -78,7 +78,7 @@
 </tr>
 </tbody>
 </table>
-<p><em>I need a woman with normal voice to talk: Tom, the Piper's Son.</em></p>
+<p><em>I need a <b>woman</b> with normal voice to talk: Tom, the Piper's Son.</em></p>
 <table>
 <thead>
 <tr>
