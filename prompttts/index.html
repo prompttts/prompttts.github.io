@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="../css/custom.css">
 <link rel="alternate" href="index.xml" type="application/rss+xml" title="Speech Research">
 <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
-<title>PROMPTTTS: CONTROLLABLE TEXT-TO-SPEECH WITH TEXT DESCRIPTIONS - Speech Research</title>
+<title>PromptTTS: controllable text-to-speech with text descriptions - Speech Research</title>
 </head>
 <body>
 
@@ -21,7 +21,7 @@
 	</header>
 	<main role="main">
 		<article itemscope itemtype="https://schema.org/BlogPostinCg">
-            <h1 class="entry-title" itemprop="headline">PROMPTTTS: CONTROLLABLE TEXT-TO-SPEECH WITH TEXT DESCRIPTIONS</h1>
+            <h1 class="entry-title" itemprop="headline">PromptTTS: controllable text-to-speech with text descriptions</h1>
 
 			<section itemprop="entry-text">
 				<br>
@@ -43,7 +43,7 @@
 <p> Since there could be a gap between the synthesized speech and the real speech, besides the dataset mentioned above (denoted as synthesized version), we also construct a dataset (denoted as real version) with real speech data from LibriTTS by similar construction process. Due to the lack of emotion in LibriTTS, the real version of PromptSpeech only has 4 style factors. As shown in the table below, we split both versions of PromptSpeech into training sets and test sets, which are released in public. The experiments are conducted on PromptSpeech to verify the effectiveness of PromptTTS.</p>
 
 <h3 id="promptspeech">1.1 PromptSpeech</h3>
-<p> You can download both versions of PromptSpeech from the table below and the number in the table corresponds to the number of downloaded data.</p>
+<p> You can download the both versions of PromptSpeech from the table below and the number in the table corresponds to the amount of downloaded data.</p>
 <table><thead>
 <tr>
 <th style="text-align: center">Version</th>
@@ -67,23 +67,23 @@
 </table>
 
 <h2 id="audio samples">2. Audio Samples</h2>
-<p> The following audio samples are on both versions of PromptSpeech from PromptTTS and the two-stage baseline system. Note that we show PromptTTS from 3 parts as follows.</p>
+<p> The following parts are the audio samples on both versions of PromptSpeech from PromptTTS and the two-stage baseline system. Note that we show PromptTTS from 3 parts as follows.</p>
 <p> <b>Comparison of Different Speech Styles</b>: we aim to show that we can control a specific style factor with the prompts of different meaning.</p>
 <p> <b>Comparison of Different Style Prompts</b>: we aim to show that promptTTS can synthesize speech in the same style with the different prompts of the same meaning.</p>
-<p> <b>Comparison of Different Systems</b>: we aim to show that PromptTTS can synthesize speech in a more consistent style with the intention of prompts than baseline.</p>
+<p> <b>Comparison of Different Systems</b>: we aim to show PromptTTS can synthesize speech in a more consistent style with the intention of prompts than baseline.</p>
 
 <h3 id="Part 1">2.1 Comparison of Different Speech Styles</h3>
 <p> Note that audio samples in this part are from PromptTTS with the prompts of different meaning to control a specific style factor.</p>
 <h4 id="synthesized1">2.1.1 Synthesized Version</h4>
 
 <h5 id="gender1">2.1.1.1 Gender</h5>
-<p>PromptTTS(1): <em>Please ask a <b>man</b> with normal pitch and normal speaking speed and normal volume to say: Tom, Tom, the piper's son, stole a pig and away he run; the pig was eat and Tom was beat and Tom ran crying down the street.</em></p>
-<p>PromptTTS(2): <em>Please ask a <b>woman</b> with normal pitch and normal speaking speed and normal volume to say: Tom, Tom, the piper's son, stole a pig and away he run; the pig was eat and Tom was beat and Tom ran crying down the street.</em></p>
+<p>Gender-1: <em>Please ask a <b>man</b> with a normal voice to say: So Tom took his father's pipes and walked over the hill to farmer Bowser's house; for you must know that.</em></p>
+<p>Gender-2: <em>Please ask a <b>woman</b> with a normal voice to say: So Tom took his father's pipes and walked over the hill to farmer Bowser's house; for you must know that.</em></p>
 <table>
 <thead>
 <tr>
-<th style="text-align: center">PromptTTS(1)</th>
-<th style="text-align: center">PromptTTS(2)</th>
+<th style="text-align: center">Gender-1</th>
+<th style="text-align: center">Gender-2</th>
 </tr>
 </thead>
 <tbody>
@@ -95,87 +95,87 @@
 </table>
 
 <h5 id="pitch1">2.1.1.2 Pitch</h5>
-<p>PromptTTS(1): <em>Please ask a man with <b>normal pitch</b> and normal speaking speed and normal volume to say: Tom, Tom, the piper's son, stole a pig and away he run; the pig was eat and Tom was beat and Tom ran crying down the street.</em></p>
-<p>PromptTTS(2): <em>Please ask a man with <b>low pitch</b> and normal speaking speed and normal volume to say: Tom, Tom, the piper's son, stole a pig and away he run; the pig was eat and Tom was beat and Tom ran crying down the street.</em></p>
-<p>PromptTTS(3): <em>Please ask a man with <b>high pitch</b> and normal speaking speed and normal volume to say: Tom, Tom, the piper's son, stole a pig and away he run; the pig was eat and Tom was beat and Tom ran crying down the street.</em></p>
+<p>Pitch-1: <em>His voice has a <b>low pitch</b>: What shall we do, he asked his father.</em></p>
+<p>Pitch-2: <em>His voice has a <b>normal pitch</b>: What shall we do, he asked his father.</em></p>
+<p>Pitch-3: <em>His voice has a <b>high pitch</b>: What shall we do, he asked his father.</em></p>
 <table>
 <thead>
 <tr>
-<th style="text-align: center">PromptTTS(1)</th>
-<th style="text-align: center">PromptTTS(2)</th>
-<th style="text-align: center">PromptTTS(3)</th>
+<th style="text-align: center">Pitch-1</th>
+<th style="text-align: center">Pitch-2</th>
+<th style="text-align: center">Pitch-3</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center"><audio controls="controls" ><source src="../audio/Part1/Synthesized/gender/PromptTTS_0.wav" autoplay/>Your browser does not support the audio element.</audio></td>
 <td style="text-align: center"><audio controls="controls" ><source src="../audio/Part1/Synthesized/pitch/PromptTTS_0.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/Part1/Synthesized/pitch/PromptTTS_1.wav" autoplay/>Your browser does not support the audio element.</audio></td>
 <td style="text-align: center"><audio controls="controls" ><source src="../audio/Part1/Synthesized/pitch/PromptTTS_2.wav" autoplay/>Your browser does not support the audio element.</audio></td>
 </tr>
 </tbody>
 </table>
 
 <h5 id="speed1">2.1.1.3 Speaking Speed</h5>
-<p>PromptTTS(1): <em>Please ask a man with normal pitch and <b>normal speaking speed</b> and normal volume to say: Tom, Tom, the piper's son, stole a pig and away he run; the pig was eat and Tom was beat and Tom ran crying down the street.</em></p>
-<p>PromptTTS(2): <em>Please ask a man with normal pitch and <b>slow speaking speed</b> and normal volume to say: Tom, Tom, the piper's son, stole a pig and away he run; the pig was eat and Tom was beat and Tom ran crying down the street.</em></p>
-<p>PromptTTS(3): <em>Please ask a man with normal pitch and <b>fast speaking speed</b> and normal volume to say: Tom, Tom, the piper's son, stole a pig and away he run; the pig was eat and Tom was beat and Tom ran crying down the street.</em></p>
+<p>Speaking Speed-1: <em>Please speak at a <b>slow speed</b>, gentleman: This man Tom, Tom, the piper's son, was hungry when the day begun; he wanted a bun and asked for one, but soon found out that there were none.</em></p>
+<p>Speaking Speed-2: <em>Please speak at a <b>normal speed</b>, gentleman: This man Tom, Tom, the piper's son, was hungry when the day begun; he wanted a bun and asked for one, but soon found out that there were none.</em></p>
+<p>Speaking Speed-3: <em>Please speak at a <b>fast speed</b>, gentleman: This man Tom, Tom, the piper's son, was hungry when the day begun; he wanted a bun and asked for one, but soon found out that there were none.</em></p>
 <table>
 <thead>
 <tr>
-<th style="text-align: center">PromptTTS(1)</th>
-<th style="text-align: center">PromptTTS(2)</th>
-<th style="text-align: center">PromptTTS(3)</th>
+<th style="text-align: center">Speaking Speed-1</th>
+<th style="text-align: center">Speaking Speed-2</th>
+<th style="text-align: center">Speaking Speed-3</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center"><audio controls="controls" ><source src="../audio/Part1/Synthesized/gender/PromptTTS_0.wav" autoplay/>Your browser does not support the audio element.</audio></td>
 <td style="text-align: center"><audio controls="controls" ><source src="../audio/Part1/Synthesized/speed/PromptTTS_0.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/Part1/Synthesized/speed/PromptTTS_1.wav" autoplay/>Your browser does not support the audio element.</audio></td>
 <td style="text-align: center"><audio controls="controls" ><source src="../audio/Part1/Synthesized/speed/PromptTTS_2.wav" autoplay/>Your browser does not support the audio element.</audio></td>
 </tr>
 </tbody>
 </table>
 
 <h5 id="volume1">2.1.1.4 Volume</h5>
-<p>PromptTTS(1): <em>Please ask a man with normal pitch and normal speaking speed and <b>normal volume</b> to say: Tom, Tom, the piper's son, stole a pig and away he run; the pig was eat and Tom was beat and Tom ran crying down the street.</em></p>
-<p>PromptTTS(2): <em>Please ask a man with normal pitch and normal speaking speed and <b>low volume</b> to say: Tom, Tom, the piper's son, stole a pig and away he run; the pig was eat and Tom was beat and Tom ran crying down the street.</em></p>
-<p>PromptTTS(3): <em>Please ask a man with normal pitch and normal speaking speed and <b>high volume</b> to say: Tom, Tom, the piper's son, stole a pig and away he run; the pig was eat and Tom was beat and Tom ran crying down the street.</em></p>
+<p>Volume-1: <em>Generate a boy's voice with a <b>low volume</b> for me. Go hungry, replied Barney, unless you want to take my pipes and play in the village.</em></p>
+<p>Volume-2: <em>Generate a boy's voice with a <b>normal volume</b> for me. Go hungry, replied Barney, unless you want to take my pipes and play in the village.</em></p>
+<p>Volume-3: <em>Generate a boy's voice with a <b>low volume</b> for me. Go hungry, replied Barney, unless you want to take my pipes and play in the village.</em></p>
 <table>
 <thead>
 <tr>
-<th style="text-align: center">PromptTTS(1)</th>
-<th style="text-align: center">PromptTTS(2)</th>
-<th style="text-align: center">PromptTTS(3)</th>
+<th style="text-align: center">Volume-1</th>
+<th style="text-align: center">Volume-2</th>
+<th style="text-align: center">Volume-3</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center"><audio controls="controls" ><source src="../audio/Part1/Synthesized/gender/PromptTTS_0.wav" autoplay/>Your browser does not support the audio element.</audio></td>
 <td style="text-align: center"><audio controls="controls" ><source src="../audio/Part1/Synthesized/volume/PromptTTS_0.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/Part1/Synthesized/volume/PromptTTS_1.wav" autoplay/>Your browser does not support the audio element.</audio></td>
 <td style="text-align: center"><audio controls="controls" ><source src="../audio/Part1/Synthesized/volume/PromptTTS_2.wav" autoplay/>Your browser does not support the audio element.</audio></td>
 </tr>
 </tbody>
 </table>
 
 <h5 id="emotion1">2.1.1.5 Emotion</h5>
-<p>PromptTTS(1): <em>Please ask a man with normal pitch and normal speaking speed and normal volume to <b>say</b>: Tom, Tom, the piper's son, stole a pig and away he run; the pig was eat and Tom was beat and Tom ran crying down the street.</em></p>
-<p>PromptTTS(2): <em>Please ask a man with normal pitch and normal speaking speed and normal volume to <b>shout</b>: Tom, Tom, the piper's son, stole a pig and away he run; the pig was eat and Tom was beat and Tom ran crying down the street.</em></p>
-<p>PromptTTS(3): <em>Please ask a man with normal pitch and normal speaking speed and normal volume to <b>whisper</b>: Tom, Tom, the piper's son, stole a pig and away he run; the pig was eat and Tom was beat and Tom ran crying down the street.</em></p>
-<p>PromptTTS(4): <em>Please ask a man with normal pitch and normal speaking speed and normal volume to <b>say cheerfully</b>: Tom, Tom, the piper's son, stole a pig and away he run; the pig was eat and Tom was beat and Tom ran crying down the street.</em></p>
-<p>PromptTTS(5): <em>Please ask a man with normal pitch and normal speaking speed and normal volume to <b>say sadly</b>: Tom, Tom, the piper's son, stole a pig and away he run; the pig was eat and Tom was beat and Tom ran crying down the street.</em></p>
+<p>Emotion-1: <em>Look, that man <b>says</b> to his friend: Tom, Tom, the piper's son, stole a pig and away he run; the pig was eat and Tom was beat and Tom ran crying down the street.</em></p>
+<p>Emotion-2: <em>Look, that man <b>shouts</b> to his friend: Tom, Tom, the piper's son, stole a pig and away he run; the pig was eat and Tom was beat and Tom ran crying down the street.</em></p>
+<p>Emotion-3: <em>Look, that man <b>whispers</b> to his friend: Tom, Tom, the piper's son, stole a pig and away he run; the pig was eat and Tom was beat and Tom ran crying down the street.</em></p>
+<p>Emotion-4: <em>Look, that man <b>says cheerfully</b> to his friend: Tom, Tom, the piper's son, stole a pig and away he run; the pig was eat and Tom was beat and Tom ran crying down the street.</em></p>
+<p>Emotion-5: <em>Look, that man <b>says sadly</b> to his friend: Tom, Tom, the piper's son, stole a pig and away he run; the pig was eat and Tom was beat and Tom ran crying down the street.</em></p>
 <table>
 <thead>
 <tr>
-<th style="text-align: center">PromptTTS(1)</th>
-<th style="text-align: center">PromptTTS(2)</th>
-<th style="text-align: center">PromptTTS(3)</th>
-<th style="text-align: center">PromptTTS(4)</th>
-<th style="text-align: center">PromptTTS(5)</th>
+<th style="text-align: center">Emotion-1</th>
+<th style="text-align: center">Emotion-2</th>
+<th style="text-align: center">Emotion-3</th>
+<th style="text-align: center">Emotion-4</th>
+<th style="text-align: center">Emotion-5</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center"><audio controls="controls" ><source src="../audio/Part1/Synthesized/gender/PromptTTS_0.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/Part1/Synthesized/emotion/PromptTTS_0.wav" autoplay/>Your browser does not support the audio element.</audio></td>
 <td style="text-align: center"><audio controls="controls" ><source src="../audio/Part1/Synthesized/emotion/PromptTTS_1.wav" autoplay/>Your browser does not support the audio element.</audio></td>
 <td style="text-align: center"><audio controls="controls" ><source src="../audio/Part1/Synthesized/emotion/PromptTTS_2.wav" autoplay/>Your browser does not support the audio element.</audio></td>
 <td style="text-align: center"><audio controls="controls" ><source src="../audio/Part1/Synthesized/emotion/PromptTTS_3.wav" autoplay/>Your browser does not support the audio element.</audio></td>
@@ -186,13 +186,13 @@
 
 <h4 id="real1">2.1.2 Real Version</h4>
 <h5 id="gender2">2.1.2.1 Gender</h5>
-<p>PromptTTS(1): <em>Please ask a <b>man</b> with normal pitch and normal speaking speed and normal volume to say: Tom did not like to steal, but he had no one to teach him to be honest, and so, under his father's guidance, he fell into bad ways.</em></p>
-<p>PromptTTS(2): <em>Please ask a <b>woman</b> with normal pitch and normal speaking speed and normal volume to say: Tom did not like to steal, but he had no one to teach him to be honest, and so, under his father's guidance, he fell into bad ways.</em></p>
+<p>Gender-1: <em>Provide me with a <b>male</b> voice: Go hungry, replied Barney, unless you want to take my pipes and play in the village.</em></p>
+<p>Gender-2: <em>Provide me with a <b>female</b> voice: Go hungry, replied Barney, unless you want to take my pipes and play in the village.</em></p>
 <table>
 <thead>
 <tr>
-<th style="text-align: center">PromptTTS(1)</th>
-<th style="text-align: center">PromptTTS(2)</th>
+<th style="text-align: center">Gender-1</th>
+<th style="text-align: center">Gender-2</th>
 </tr>
 </thead>
 <tbody>
@@ -204,55 +204,55 @@
 </table>
 
 <h5 id="pitch2">2.1.2.2 Pitch</h5>
-<p>PromptTTS(1): <em>Please ask a woman with <b>normal pitch</b> and normal speaking speed and normal volume to say: Tom did not like to steal, but he had no one to teach him to be honest, and so, under his father's guidance, he fell into bad ways.</em></p>
-<p>PromptTTS(2): <em>Please ask a woman with <b>low pitch</b> and normal speaking speed and normal volume to say: Tom did not like to steal, but he had no one to teach him to be honest, and so, under his father's guidance, he fell into bad ways.</em></p>
+<p>Pitch-1: <em>She said in a <b>deep</b> voice: There was not a worse vagabond in Shrewsbury than old Barney the piper.</em></p>
+<p>Pitch-2: <em>She said in a <b>sharp</b> voice: There was not a worse vagabond in Shrewsbury than old Barney the piper.</em></p>
 <table>
 <thead>
 <tr>
-<th style="text-align: center">PromptTTS(1)</th>
-<th style="text-align: center">PromptTTS(2)</th>
+<th style="text-align: center">Pitch-1</th>
+<th style="text-align: center">Pitch-2</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center"><audio controls="controls" ><source src="../audio/Part1/Real/gender/PromptTTS_1.wav" autoplay/>Your browser does not support the audio element.</audio></td>
 <td style="text-align: center"><audio controls="controls" ><source src="../audio/Part1/Real/pitch/PromptTTS_0.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/Part1/Real/pitch/PromptTTS_1.wav" autoplay/>Your browser does not support the audio element.</audio></td>
 </tr>
 </tbody>
 </table>
 
-<h5 id="speed2">2.1.2.3 Speed</h5>
-<p>PromptTTS(1): <em>Please ask a woman with normal pitch and <b>normal speaking speed</b> and normal volume to say: Tom did not like to steal, but he had no one to teach him to be honest, and so, under his father's guidance, he fell into bad ways.</em></p>
-<p>PromptTTS(2): <em>Please ask a woman with normal pitch and <b>slow speaking</b> speaking speed and normal volume to say: Tom did not like to steal, but he had no one to teach him to be honest, and so, under his father's guidance, he fell into bad ways.</em></p>
+<h5 id="speed2">2.1.2.3 Speaking Speed</h5>
+<p>Speaking Speed-1: <em>I want to hear that girl talk <b>slowly</b>: Tom, the piper's son</em></p>
+<p>Speaking Speed-2: <em>I want to hear that girl talk <b>quickly</b>: Tom, the piper's son</em></p>
 <table>
 <thead>
 <tr>
-<th style="text-align: center">PromptTTS(1)</th>
-<th style="text-align: center">PromptTTS(2)</th>
+<th style="text-align: center">Speaking Speed-1</th>
+<th style="text-align: center">Speaking Speed-2</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center"><audio controls="controls" ><source src="../audio/Part1/Real/gender/PromptTTS_1.wav" autoplay/>Your browser does not support the audio element.</audio></td>
 <td style="text-align: center"><audio controls="controls" ><source src="../audio/Part1/Real/speed/PromptTTS_0.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/Part1/Real/speed/PromptTTS_2.wav" autoplay/>Your browser does not support the audio element.</audio></td>
 </tr>
 </tbody>
 </table>
 
 <h5 id="volume2">2.1.2.4 Volume</h5>
-<p>PromptTTS(1): <em>Please ask a woman with normal pitch and normal speaking speed and <b>normal volume</b> to say: Tom did not like to steal, but he had no one to teach him to be honest, and so, under his father's guidance, he fell into bad ways.</em></p>
-<p>PromptTTS(2): <em>Please ask a woman with normal pitch and normal speaking speaking speed and <b>low volume</b> to say: Tom did not like to steal, but he had no one to teach him to be honest, and so, under his father's guidance, he fell into bad ways.</em></p>
+<p>Volume-1: <em>Let's speak in a <b>low voice</b>, girls!: Tom did not like to steal, but he had no one to teach him to be honest, and so, under his father's guidance, he fell into bad ways.</em></p>
+<p>Volume-2: <em>Let's speak in a <b>high voice</b>: Tom did not like to steal, but he had no one to teach him to be honest, and so, under his father's guidance, he fell into bad ways.</em></p>
 <table>
 <thead>
 <tr>
-<th style="text-align: center">PromptTTS(1)</th>
-<th style="text-align: center">PromptTTS(2)</th>
+<th style="text-align: center">Volume-1</th>
+<th style="text-align: center">Volume-1</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center"><audio controls="controls" ><source src="../audio/Part1/Real/gender/PromptTTS_1.wav" autoplay/>Your browser does not support the audio element.</audio></td>
 <td style="text-align: center"><audio controls="controls" ><source src="../audio/Part1/Real/volume/PromptTTS_0.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls" ><source src="../audio/Part1/Real/volume/PromptTTS_2.wav" autoplay/>Your browser does not support the audio element.</audio></td>
 </tr>
 </tbody>
 </table>
@@ -261,13 +261,13 @@
 <h3 id="Part 2">2.2 Comparison of Different Style Prompts</h3>
 <p> Note that audio samples in this part are from PromptTTS with the different prompts of the same meaning to synthesize the speech in the same style.</p>
 <h4 id="synthesized2">2.2.1 Synthesized Version</h4>
-<p>PromptTTS(1): <em>Ask a <b>boy</b> to speak with normal speed and volume: Tom, the piper's son.</em></p>
-<p>PromptTTS(2): <em>I need a <b>man</b> with a normal voice to talk: Tom, the piper's son.</em></p>
+<p>Gender-1: <em>Ask a <b>boy</b> to speak with normal speed and volume: Tom, the piper's son.</em></p>
+<p>Gender-2: <em>I need a <b>man</b> with a normal voice to talk: Tom, the piper's son.</em></p>
 <table>
 <thead>
 <tr>
-<th style="text-align: center">PromptTTS(1)</th>
-<th style="text-align: center">PromptTTS(2)</th>
+<th style="text-align: center">Gender-1</th>
+<th style="text-align: center">Gender-2</th>
 </tr>
 </thead>
 <tbody>
@@ -278,13 +278,13 @@
 </tbody>
 </table>
 
-<p>PromptTTS(1): <em>The <b>boy's</b> voice is very <b>sharp</b>: Tom, the piper's son.</em></p>
-<p>PromptTTS(2): <em>Synthesize a very <b>squeaky</b> voice and ask <b>him</b> to say: Tom, the piper's son.</em></p>
+<p>Pitch-1: <em>The <b>boy's</b> voice is very <b>sharp</b>: Tom, the piper's son.</em></p>
+<p>Pitch-2: <em>Synthesize a very <b>squeaky</b> voice and ask <b>him</b> to say: Tom, the piper's son.</em></p>
 <table>
 <thead>
 <tr>
-<th style="text-align: center">PromptTTS(1)</th>
-<th style="text-align: center">PromptTTS(2)</th>
+<th style="text-align: center">Pitch-1</th>
+<th style="text-align: center">Pitch-2</th>
 </tr>
 </thead>
 <tbody>
@@ -295,13 +295,13 @@
 </tbody>
 </table>
 
-<p>PromptTTS(1): <em>Generate a <b>male</b> voice with <b>slow</b> speaking speed, please: Tom, the piper's son.</em></p>
-<p>PromptTTS(2): <em><b>He</b> spoke even more <b>slowly</b> than usual: Tom, the piper's son.</em></p>
+<p>Speaking Speed-1: <em>Generate a <b>male</b> voice with <b>slow</b> speaking speed, please: Tom, the piper's son.</em></p>
+<p>Speaking Speed-2: <em><b>He</b> spoke even more <b>slowly</b> than usual: Tom, the piper's son.</em></p>
 <table>
 <thead>
 <tr>
-<th style="text-align: center">PromptTTS(1)</th>
-<th style="text-align: center">PromptTTS(2)</th>
+<th style="text-align: center">Speaking Speed-1</th>
+<th style="text-align: center">Speaking Speed-2</th>
 </tr>
 </thead>
 <tbody>
@@ -312,13 +312,13 @@
 </tbody>
 </table>
 
-<p>PromptTTS(1): <em><b>Gentlemen</b>, please talk <b>softly</b>: Tom, the piper's son.</em></p>
-<p>PromptTTS(2): <em>Could you please help me generate a <b>manlike</b> voice to talk with me in a <b>low voice</b>: Tom, the piper's son.</em></p>
+<p>Volume-1: <em><b>Gentlemen</b>, please talk <b>softly</b>: Tom, the piper's son.</em></p>
+<p>Volume-2: <em>Could you please help me generate a <b>manlike</b> voice to talk with me in a <b>low voice</b>: Tom, the piper's son.</em></p>
 <table>
 <thead>
 <tr>
-<th style="text-align: center">PromptTTS(1)</th>
-<th style="text-align: center">PromptTTS(2)</th>
+<th style="text-align: center">Volume-1</th>
+<th style="text-align: center">Volume-2</th>
 </tr>
 </thead>
 <tbody>
@@ -330,13 +330,13 @@
 </table>
 
 <h4 id="real2">2.2.2 Real Version</h4>
-<p>PromptTTS(1): <em>Please let a <b>lady</b> speak for me and <b>she</b> has a very <b>deep</b> voice: He never did any work except to play the pipes, and he played so badly that few pennies ever found their way into his pouch.</em></p>
-<p>PromptTTS(2): <em>The <b>woman</b> has a <b>low-pitched</b> voice: He never did any work except to play the pipes, and he played so badly that few pennies ever found their way into his pouch.</em></p>
+<p>Pitch-1: <em>Please let a <b>lady</b> speak for me and <b>she</b> has a very <b>deep</b> voice: He never did any work except to play the pipes, and he played so badly that few pennies ever found their way into his pouch.</em></p>
+<p>Pitch-2: <em>The <b>woman</b> has a <b>low-pitched</b> voice: He never did any work except to play the pipes, and he played so badly that few pennies ever found their way into his pouch.</em></p>
 <table>
 <thead>
 <tr>
-<th style="text-align: center">PromptTTS(1)</th>
-<th style="text-align: center">PromptTTS(2)</th>
+<th style="text-align: center">Pitch-1</th>
+<th style="text-align: center">Pitch-2</th>
 </tr>
 </thead>
 <tbody>
@@ -347,13 +347,13 @@
 </tbody>
 </table>
 
-<p>PromptTTS(1): <em>I want a <b>loud</b> <b>female</b> voice: He never did any work except to play the pipes, and he played so badly that few pennies ever found their way into his pouch.</em></p>
-<p>PromptTTS(2): <em>This <b>madam</b> talks to me with <b>high volume</b>: He never did any work except to play the pipes, and he played so badly that few pennies ever found their way into his pouch.</em></p>
+<p>Volume-1: <em>I want a <b>loud</b> <b>female</b> voice: He never did any work except to play the pipes, and he played so badly that few pennies ever found their way into his pouch.</em></p>
+<p>Volume-2: <em>This <b>madam</b> talks to me with <b>high volume</b>: He never did any work except to play the pipes, and he played so badly that few pennies ever found their way into his pouch.</em></p>
 <table>
 <thead>
 <tr>
-<th style="text-align: center">PromptTTS(1)</th>
-<th style="text-align: center">PromptTTS(2)</th>
+<th style="text-align: center">Volume-1</th>
+<th style="text-align: center">Volume-2</th>
 </tr>
 </thead>
 <tbody>
@@ -367,13 +367,13 @@
 <h3 id="Part 3">2.3 Comparison of Different Systems</h3>
 <p> Note that audio samples in this part are from PromptTTS and the two-stage baseline system (denoted as Two-stage) with the same prompts, which shows that PromptTTS can synthesize speech in a more consistent style with the intention of prompts than baseline.</p>
 <h4 id="synthesized3">2.3.1 Synthesized Version</h4>
-<p>PromptTTS(1): <em>Listen, <b>she</b> <b>increased her speaking speed</b>: There was not a worse vagabond in Shrewsbury than old Barney the piper.</em></p>
-<p>Two-stage(1): <em>Listen, <b>she</b> <b>increased her speaking speed</b>: There was not a worse vagabond in Shrewsbury than old Barney the piper.</em></p>
+<p>PromptTTS: <em>Listen, <b>she</b> <b>increased her speaking speed</b>: There was not a worse vagabond in Shrewsbury than old Barney the piper.</em></p>
+<p>Two-stage: <em>Listen, <b>she</b> <b>increased her speaking speed</b>: There was not a worse vagabond in Shrewsbury than old Barney the piper.</em></p>
 <table>
 <thead>
 <tr>
-<th style="text-align: center">PromptTTS(1)</th>
-<th style="text-align: center">Two-stage(1)</th>
+<th style="text-align: center">PromptTTS</th>
+<th style="text-align: center">Two-stage</th>
 </tr>
 </thead>
 <tbody>
@@ -384,13 +384,13 @@
 </tbody>
 </table>
 
-<p>PromptTTS(1): <em><b>Reduce the volume</b> of <b>her</b> voice for me: There was not a worse vagabond in Shrewsbury than old Barney the piper.</em></p>
-<p>Two-stage(1): <em><b>Reduce the volume</b> of <b>her</b> voice for me: There was not a worse vagabond in Shrewsbury than old Barney the piper.</em></p>
+<p>PromptTTS: <em><b>Reduce the volume</b> of <b>her</b> voice for me: There was not a worse vagabond in Shrewsbury than old Barney the piper.</em></p>
+<p>Two-stage: <em><b>Reduce the volume</b> of <b>her</b> voice for me: There was not a worse vagabond in Shrewsbury than old Barney the piper.</em></p>
 <table>
 <thead>
 <tr>
-<th style="text-align: center">PromptTTS(1)</th>
-<th style="text-align: center">Two-stage(1)</th>
+<th style="text-align: center">PromptTTS</th>
+<th style="text-align: center">Two-stage</th>
 </tr>
 </thead>
 <tbody>
@@ -402,13 +402,13 @@
 </table>
 
 <h4 id="real3">2.3.2 Real Version</h4>
-<p>PromptTTS(1): <em>Please find a <b>girl</b> to talk at a <b>higher pitch</b> than usual: Barney had one son, named Tom; and they lived all alone in a little hut away at the end of the village street, for Tom's mother had died when he was a baby.</em></p>
-<p>Two-stage(1): <em>Please find a <b>girl</b> to talk at a <b>higher pitch</b> than usual: Barney had one son, named Tom; and they lived all alone in a little hut away at the end of the village street, for Tom's mother had died when he was a baby.</em></p>
+<p>PromptTTS: <em>Please find a <b>girl</b> to talk at a <b>higher pitch</b> than usual: Barney had one son, named Tom; and they lived all alone in a little hut away at the end of the village street, for Tom's mother had died when he was a baby.</em></p>
+<p>Two-stage: <em>Please find a <b>girl</b> to talk at a <b>higher pitch</b> than usual: Barney had one son, named Tom; and they lived all alone in a little hut away at the end of the village street, for Tom's mother had died when he was a baby.</em></p>
 <table>
 <thead>
 <tr>
-<th style="text-align: center">PromptTTS(1)</th>
-<th style="text-align: center">Two-stage(1)</th>
+<th style="text-align: center">PromptTTS</th>
+<th style="text-align: center">Two-stage</th>
 </tr>
 </thead>
 <tbody>
